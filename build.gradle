@@ -1,7 +1,9 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'groovy'
+apply {
+    plugin 'java'
+    plugin 'eclipse'
+    plugin 'idea'
+    plugin 'groovy'
+}
 
 repositories {mavenCentral()}
 
@@ -9,6 +11,7 @@ dependencies {
     groovy "org.codehaus.groovy:groovy-all:1.7.4"
 
     compile "org.apache.tapestry:plastic:5.3.5"
+    compile 'org.slf4j:slf4j-api:1.6.6'
 
     testCompile "junit:junit:4.8.1"
     testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
