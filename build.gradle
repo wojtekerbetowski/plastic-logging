@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+           
+//    mavenRepo urls: "https://repository.apache.org/content/repositories/staging/"   
+}
+
+dependencies {
+  compile "org.apache.tapestry:plastic:5.3.5"
+
+  groovy "org.codehaus.groovy:groovy-all:1.7.4"
+
+  testCompile "junit:junit:4.8.1"  
+  testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+}
