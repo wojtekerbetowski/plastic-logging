@@ -6,6 +6,7 @@ import org.apache.tapestry5.plastic.MethodInvocation
 import org.apache.tapestry5.plastic.PlasticClass
 import org.apache.tapestry5.plastic.PlasticClassTransformer
 import org.apache.tapestry5.plastic.PlasticManager
+import org.apache.tapestry5.plastic.PlasticMethod
 import org.slf4j.Logger
 import spock.lang.Ignore
 import spock.lang.Specification
@@ -39,9 +40,9 @@ class LoggingSpec extends Specification {
         def transformer = new PlasticClassTransformer() {
             @Override
             void transform(PlasticClass plasticClass) {
-                def methods = plasticClass.getMethods()
+                def method = plasticClass.methods.find {it.description.methodName == 'myBusinessMethod'}
 
-                methods[0].addAdvice()
+                method.addAdvice(advice)
             }
         }
 
